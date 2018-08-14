@@ -9,7 +9,9 @@ services:
       - postgresql
     volumes:       
       - ./configs:/collector/configs
-    command: tail -f /dev/null
+    environment:
+      USER: airbnb
+    command:  tail -f /dev/null
 
   postgresql:
     image: mdillon/postgis:10
@@ -17,7 +19,8 @@ services:
     restart: always
     volumes:  
       - ../postgresql/:/sql/
-      - ./scripts:/docker-entrypoint-initdb.d/  
+      - ./scripts:/docker-entrypoint-initdb.d/ 
+      - ./exports:/exports 
     environment:
       POSTGRES_PASSWORD: airbnb
       POSTGRES_USER: airbnb

@@ -11,6 +11,7 @@
 *.json
 *.sh
 *.xlsx
+*.csv
 temp.*
 googlemaps.py
 !example.config
@@ -45,4 +46,3 @@ googlemaps.py
 /postgresql/shapefiles/*
 !docker/scripts/*.sh
 !docker/*.config
-
