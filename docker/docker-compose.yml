@@ -20,7 +20,7 @@ services:
     volumes:  
       - ../postgresql/:/sql/
       - ./scripts:/docker-entrypoint-initdb.d/ 
-      - ./exports:/exports 
+      - ../exports:/exports 
     environment:
       POSTGRES_PASSWORD: airbnb
       POSTGRES_USER: airbnb
